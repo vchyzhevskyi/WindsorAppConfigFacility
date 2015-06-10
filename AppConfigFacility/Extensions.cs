@@ -27,9 +27,8 @@
                 var configuration = new ConfigConfiguration<T>();
                 configAction(configuration);
 
-                registration.ExtendedProperties(new Property(AppConfigInterceptor.ComputedPropertiesKey,
-                    configuration.ComputedDictionary));
-                registration.ExtendedProperties(new Property(AppConfigInterceptor.PrefixKey, configuration.Prefix));
+                registration.ExtendedProperties(Property.ForKey(AppConfigInterceptor.ComputedPropertiesKey).Eq(configuration.ComputedDictionary));
+                registration.ExtendedProperties(Property.ForKey(AppConfigInterceptor.PrefixKey).Eq(configuration.Prefix));
             }
 
             return registration;

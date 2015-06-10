@@ -24,7 +24,7 @@
             Kernel.Register(
                 Component.For<ISettingsCache>().ImplementedBy(_cacheType),
                 Component.For<ISettingsProvider>().ImplementedBy(_settingsProviderType),
-                Component.For<AppConfigInterceptor>().LifestyleTransient());
+                Component.For<AppConfigInterceptor>().LifeStyle.Transient);
         }
 
         /// <summary>
